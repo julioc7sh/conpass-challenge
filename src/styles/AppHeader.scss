@@ -1,0 +1,25 @@
+.app-header {
+  width: 100%;
+}
+.app-header .container .row {
+  background: #fff;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  min-height: 100px;
+  border-bottom: 1px solid #eee;
+}
+
+.app-header .container .row .logo {
+  background-size: contain;
+  width: 100%;
+  height: 100%;
+  max-width: 200px;
+  max-height: 45px;
+}
+.app-header .container .row .btn-link {
+  text-decoration: none;
+  font-size: 18px;
+  font-weight: 600;
+  color: #bbb;
+}
