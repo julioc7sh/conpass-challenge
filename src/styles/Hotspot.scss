@@ -1,0 +1,36 @@
+.hotspot {
+  width: 28px;
+  height: 28px;
+  border: 2px solid red;
+  border-radius: 100%;
+  padding: 2px;
+  opacity: 0.5;
+  position: absolute;
+  z-index: 9;
+}
+.hotspot .round-inner {
+  background: red;
+  width: 100%;
+  height: 100%;
+  border-radius: 100%;
+}
+.hotspot-cmp .content {
+  display: none;
+  position: absolute;
+  z-index: 9;
+  width: 400px;
+  box-shadow: 0px 1px 10px 0px #dedede;
+  background: #fff;
+  border-radius: 8px;
+  padding: 24px;
+}
+.content h3 {
+  text-align: left;
+}
+.content .description {
+  color: #bbb;
+  text-align: left;
+}
+.hotspot-cmp:hover > .content {
+  display: block;
+}

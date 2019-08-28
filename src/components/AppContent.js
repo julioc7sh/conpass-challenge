@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import addHotspot from "../actionCreators/addHotspot";
 import removeHotspot from "../actionCreators/removeHotspot";
+import setCreation from "../actionCreators/setCreation";
 import "../styles/AppContent.scss";
 
 class AppContent extends Component {
@@ -12,11 +12,13 @@ class AppContent extends Component {
   }
 
   handleCreateHotSpots(event) {
-    console.log("handleCreateHotSpots", event);
-    this.props.handleAddHotspot({
-      posX: 10,
-      posY: 11
-    });
+    event.preventDefault();
+    this.props.handleSetCreation(true);
+    // console.log("handleCreateHotSpots", event);
+    // this.props.handleAddHotspot({
+    //   posX: 10,
+    //   posY: 11
+    // });
   }
   handleDelete(event, index) {
     event.preventDefault();
@@ -75,8 +77,8 @@ const mapStateToProps = ({ hotspots }) => ({
 });
 
 const mapDispatchToProps = dispatch => ({
-  handleAddHotspot(pos) {
-    dispatch(addHotspot(pos));
+  handleSetCreation(val) {
+    dispatch(setCreation(val));
   },
   handleRemoveHotspot(index) {
     dispatch(removeHotspot(index));

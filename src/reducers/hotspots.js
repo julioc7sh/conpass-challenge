@@ -7,6 +7,9 @@ export default function hotspotsReducer(state = [], action) {
         {
           id: next,
           text: `Hotspot`,
+          title: action.payload.title,
+          description: action.payload.description,
+          editable: action.payload.editable,
           posX: action.payload.posX,
           posY: action.payload.posY
         }
