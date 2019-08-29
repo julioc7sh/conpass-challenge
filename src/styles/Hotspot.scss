@@ -1,4 +1,4 @@
-.hotspot {
+.hotspot-cmp .hotspot {
   width: 28px;
   height: 28px;
   border: 2px solid red;
@@ -8,7 +8,7 @@
   position: absolute;
   z-index: 9;
 }
-.hotspot .round-inner {
+.hotspot-cmp .hotspot .round-inner {
   background: red;
   width: 100%;
   height: 100%;
@@ -24,10 +24,30 @@
   border-radius: 8px;
   padding: 24px;
 }
-.content h3 {
+.hotspot-cmp .form-register {
+  position: absolute;
+  text-align: left;
+  z-index: 9;
+  width: 300px;
+  box-shadow: 0px 1px 10px 0px #dedede;
+  background: #fff;
+  border-radius: 8px;
+  padding: 16px;
+  font-size: 14px;
+}
+.hotspot-cmp .form-register .form-control {
+  font-size: 0.8rem;
+}
+.hotspot-cmp .form-register textarea {
+  resize: none !important;
+}
+.hotspot-cmp .form-register .btn-container {
+  text-align: right;
+}
+.hotspot-cmp .content h3 {
   text-align: left;
 }
-.content .description {
+.hotspot-cmp .content .description {
   color: #bbb;
   text-align: left;
 }

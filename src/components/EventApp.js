@@ -73,7 +73,12 @@ class EventApp extends Component {
         onClick={this.handleClick}
       >
         {hotspots.map(hotspot => (
-          <Hotspot key={hotspot.id} posX={hotspot.posX} posY={hotspot.posY} />
+          <Hotspot
+            key={hotspot.id}
+            editable={hotspot.editable}
+            posX={hotspot.posX}
+            posY={hotspot.posY}
+          />
         ))}
         <AppHeader />
         <AppContent />
