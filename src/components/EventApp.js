@@ -43,8 +43,8 @@ class EventApp extends Component {
     event.stopPropagation();
     if (this.props.creation) {
       const hotspot = {
-        title: "um titulo legal",
-        description: "testando algumas coisas",
+        title: "",
+        description: "",
         editable: true,
         posX: event.clientX,
         posY: event.clientY
@@ -59,7 +59,6 @@ class EventApp extends Component {
           ""
         );
       }
-      console.log(event.clientX, event.clientY);
     }
   }
   render() {
@@ -72,9 +71,12 @@ class EventApp extends Component {
         onMouseOut={this.handleMouseOut}
         onClick={this.handleClick}
       >
-        {hotspots.map(hotspot => (
+        {hotspots.map((hotspot, index) => (
           <Hotspot
             key={hotspot.id}
+            index={index}
+            title={hotspot.title}
+            description={hotspot.description}
             editable={hotspot.editable}
             posX={hotspot.posX}
             posY={hotspot.posY}

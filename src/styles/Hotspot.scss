@@ -42,7 +42,9 @@
   resize: none !important;
 }
 .hotspot-cmp .form-register .btn-container {
-  text-align: right;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 0px;
 }
 .hotspot-cmp .content h3 {
   text-align: left;
