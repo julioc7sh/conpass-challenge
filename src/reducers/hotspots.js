@@ -5,7 +5,6 @@ export default function hotspotsReducer(state = [], action) {
         state.length > 0
           ? Math.max(...state.map(hotspot => hotspot.id)) + 1
           : 1;
-      console.log("next", next);
       const hotspot = {
         id: next,
         text: `Hotspot`,
@@ -22,7 +21,6 @@ export default function hotspotsReducer(state = [], action) {
         description: action.payload.description,
         editable: action.payload.editable
       });
-      console.log(state);
       if (state.length === 0) {
         return [newHotspot];
       }
@@ -32,11 +30,10 @@ export default function hotspotsReducer(state = [], action) {
         ...state.slice(action.payload.index + 1)
       ];
     case "REMOVE_HOTSPOT":
-      let items = [
-        ...state.slice(0, action.payload - 1),
-        ...state.slice(action.payload)
+      return [
+        ...state.slice(0, action.payload),
+        ...state.slice(action.payload + 1)
       ];
-      return items;
     default:
       return state;
   }

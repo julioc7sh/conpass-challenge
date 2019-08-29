@@ -23,6 +23,7 @@ class Hotspot extends Component {
     super(props);
     this.handleChange = this.handleChange.bind(this);
     this.handleRegister = this.handleRegister.bind(this);
+    this.handleRemove = this.handleRemove.bind(this);
   }
   state = {
     title: "",
@@ -39,11 +40,16 @@ class Hotspot extends Component {
       editable: false
     });
   }
-  handleDelete(event) {
-    event.preventDefault();
+  handleRemove(event) {
+    this.props.handleUpdateHotspot({
+      index: this.props.index,
+      editable: false
+    });
     this.props.handleRemoveHotspot(this.props.index);
   }
   render() {
+    const { title, description } = this.state;
+    const isInvalid = title.length === 0 || description.length === 0;
     return (
       <div className="hotspot-cmp">
         <Container
@@ -60,7 +66,7 @@ class Hotspot extends Component {
             className="form-register"
           >
             <div className="form-group">
-              <label htmlFor="title">Título - {this.props.index}</label>
+              <label htmlFor="title">Título</label>
               <input
                 type="text"
                 name="title"
@@ -73,12 +79,6 @@ class Hotspot extends Component {
             </div>
             <div className="form-group">
               <label htmlFor="description">Descrição</label>
-              {/* <input
-                type="text"
-                className="form-control"
-                id="description"
-                placeholder="descrição que explica melhor o hotspot"
-              /> */}
               <textarea
                 className="form-control"
                 id="description"
@@ -94,7 +94,11 @@ class Hotspot extends Component {
               <button onClick={this.handleRemove} className="btn btn-danger">
                 Deletar
               </button>
-              <button onClick={this.handleRegister} className="btn btn-primary">
+              <button
+                disabled={isInvalid}
+                onClick={this.handleRegister}
+                className="btn btn-primary"
+              >
                 Cadastrar
               </button>
             </div>

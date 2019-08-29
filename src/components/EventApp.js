@@ -1,10 +1,10 @@
 import React, { Component } from "react";
 import AppHeader from "../components/AppHeader";
 import AppContent from "../components/AppContent";
-import Hotspot from "../components/Hotspot";
 import { connect } from "react-redux";
 import addHotspot from "../actionCreators/addHotspot";
 import setCreation from "../actionCreators/setCreation";
+import Hotspot from "../components/Hotspot";
 
 class EventApp extends Component {
   constructor(props) {

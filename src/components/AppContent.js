@@ -14,15 +14,9 @@ class AppContent extends Component {
   handleCreateHotSpots(event) {
     event.preventDefault();
     this.props.handleSetCreation(true);
-    // console.log("handleCreateHotSpots", event);
-    // this.props.handleAddHotspot({
-    //   posX: 10,
-    //   posY: 11
-    // });
   }
   handleDelete(event, index) {
     event.preventDefault();
-    console.log("handleDelete", index);
     this.props.handleRemoveHotspot(index);
   }
   render() {
@@ -47,14 +41,14 @@ class AppContent extends Component {
                 <div className="hotspot-list">
                   <div className="container">
                     {this.props.hotspots.map((hotspot, index) => (
-                      <div className="row" key={`${hotspot.id}-${index}`}>
+                      <div className="row" key={`${hotspot.id}`}>
                         <div className="col-6 name">{`${
                           hotspot.text
                         } #${++index}`}</div>
                         <div className="col-6 btn-delete">
                           <a
-                            href={`/#delete-${hotspot.id}`}
-                            onClick={event => this.handleDelete(event, index)}
+                            href={`/#delete-${index}`}
+                            onClick={event => this.handleDelete(event, --index)}
                           >
                             Delete
                           </a>
